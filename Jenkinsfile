@@ -15,20 +15,20 @@ node(){
         if (!env.BRANCH_NAME.startsWith("hotfix/")) {
            sh 'git merge -s recursive --no-ff origin/master'
         }
-	TAG = "${currentBuild.number}"
-	IMAGE = "denshkadov/test:${TAG}"
+	TAG   = "${currentBuild.number}"
+	IMAGE = "denshkadov/test:'$TAG'"
     }
 
 	stage('Build') {
 	    
-		image = docker.build(${IMAGE})
+		image = docker.build("${IMAGE}")
     	}
 	stage('Push'){
 			withDockerRegistry([ credentialsId: "dockerhub", url: "" ]) {
 			docker.image("${IMAGE}").push()	
-				//image.push()
+			
 				         		
       	}
-		//buildAddUrl(title: 'Deploy', url: "/job/firstRepo/job/Deploy/job/test/parambuild/")
+		buildAddUrl(title: 'Deploy', url: "/job/firstRepo/job/Deploy/job/test/parambuild/?revision=${REVISION}&docker_tag=${TAG}")
 	}
 }
