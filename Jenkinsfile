@@ -14,8 +14,8 @@ node(){
 	stage('Push'){
 			withDockerRegistry([ credentialsId: "dockerhub", url: "" ]) {
 				image.push()
-				//sh 'docker push denshkadov/test'
-          		
+				         		
       	}
+		buildAddUrl(title: 'Deploy', url: "/job/firstRepo/job/Deploy/job/test/parambuild/")
 	}
 }
