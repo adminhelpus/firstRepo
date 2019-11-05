@@ -12,7 +12,7 @@ node(){
       	    image = docker.build("test")
     	}
 	stage('Push'){
-		docker.withRegistry("htthttps://hub.docker.com/r/denshkadov/fortest") {
+		docker.withRegistry("https://hub.docker.com/r/denshkadov/fortest") {
                 image.push()
       	}
 	}
