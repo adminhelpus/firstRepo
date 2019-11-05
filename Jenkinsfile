@@ -16,9 +16,9 @@ node(){
            sh 'git merge -s recursive --no-ff origin/master'
         }
 		echo ${currentBuild.number}
-        TAG = "${env.BUILD_NUMBER}"
-		echo ${TAG}
-        IMAGE = "denshkadov/test:${TAG}"
+        //TAG = "${env.BUILD_NUMBER}"
+	//	echo ${TAG}
+        //IMAGE = "denshkadov/test:${TAG}"
     }
 
 	stage('Build') {
