@@ -16,6 +16,7 @@ node(){
            sh 'git merge -s recursive --no-ff origin/master'
         }
         TAG = "${env.BUILD_NUMBER}"
+		sh 'echo ${TAG}'
         IMAGE = "denshkadov/test:${TAG}"
     }
 
