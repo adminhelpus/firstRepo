@@ -1,4 +1,4 @@
-
+#!/usr/bin/env groovy
 node(){
 	
 	def TAG
