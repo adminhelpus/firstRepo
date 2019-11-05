@@ -8,7 +8,8 @@ node(){
     	}
 	stage('Push'){
 			withDockerRegistry([ credentialsId: "dockerhub", url: "" ]) {
-				image.push()
+			docker.image("${image}").push()	
+				//image.push()
 				         		
       	}
 		buildAddUrl(title: 'Deploy', url: "/job/firstRepo/job/Deploy/job/test/parambuild/")
