@@ -9,11 +9,11 @@ node(){
 	}
 	stage('Build') {
 	    def scmVars = checkout scm
-      	    image = docker.build("denshkadov/test")
+      	    image = docker.build("denshkadov/test:latest")
     	}
 	stage('Push'){
 			withDockerRegistry([ credentialsId: "dockerhub", url: "" ]) {
-				image.push(${image}:latest)
+				image.push()
 				//sh 'docker push denshkadov/test'
           		
       	}
