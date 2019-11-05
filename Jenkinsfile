@@ -1,6 +1,6 @@
-def TAG
+
 node(){
-	TAG = "${[0..7]}"
+	
 	stage('first'){
 		deleteDir()
 		
@@ -14,7 +14,7 @@ node(){
       		
       		
       		
-    image = docker.build("${repoName}:${TAG}")
+    image = docker.build("test")
     	}
 
 }
