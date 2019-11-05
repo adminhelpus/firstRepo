@@ -1,6 +1,6 @@
 def TAG
 node(){
-	TAG = "${[0..7]}-${ID}"
+	TAG = "${[0..7]}"
 	stage('first'){
 		deleteDir()
 		
