@@ -15,10 +15,8 @@ node(){
         if (!env.BRANCH_NAME.startsWith("hotfix/")) {
            sh 'git merge -s recursive --no-ff origin/master'
         }
-		echo ${currentBuild.number}
-        //TAG = "${env.BUILD_NUMBER}"
-	//	echo ${TAG}
-        //IMAGE = "denshkadov/test:${TAG}"
+	TAG = "${currentBuild.number}"
+	IMAGE = "denshkadov/test:${TAG}"
     }
 
 	stage('Build') {
