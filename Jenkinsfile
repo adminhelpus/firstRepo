@@ -13,7 +13,7 @@ node(){
     	}
 	stage('Push'){
 		docker.withRegistry("https://hub.docker.com/r/denshkadov/fortest") {
-                image.push()
+                dockerImage.push()
       	}
 	}
 }
