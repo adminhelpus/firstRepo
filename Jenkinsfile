@@ -13,7 +13,7 @@ node(){
     	}
 	stage('Push'){
 			withDockerRegistry([ credentialsId: "dockerhub", url: "" ]) {
-				image.push()
+				dockerImage.push()
 				//sh 'docker push denshkadov/test'
           		
       	}
