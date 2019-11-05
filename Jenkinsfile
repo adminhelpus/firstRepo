@@ -9,4 +9,7 @@ node(){
 	stage('second'){
 		sh 'pwd'
 	}
+	stage('Build') {
+      	image = docker.build("${repoName}:${TAG}")
+    	}
 }
