@@ -23,6 +23,16 @@ node(){
 	    
 		image = docker.build("${IMAGE}")
     	}
+	stage('Approve') {
+      when { branch 'master' }
+      options { timeout time: 20, unit: 'MINUTES' }
+      steps {
+        script {
+          input message: "Apply changes?"
+          APPROVED = true
+        }
+      }
+    }
 	stage('Push'){
 			withDockerRegistry([ credentialsId: "dockerhub", url: "" ]) {
 			docker.image("${IMAGE}").push()	
