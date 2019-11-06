@@ -29,6 +29,6 @@ node(){
 			
 				         		
       	}
-		buildAddUrl(title: 'Deploy', url: "/job/firstRepo/job/Deploy/job/test/parambuild/?revision=${REVISION}&docker_tag=${TAG}")
+		//buildAddUrl(title: 'Deploy', url: "/job/firstRepo/job/Deploy/job/test/parambuild/?revision=${REVISION}&docker_tag=${TAG}")
 	}
 }
